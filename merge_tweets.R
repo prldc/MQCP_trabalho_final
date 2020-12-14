@@ -31,7 +31,7 @@ combinado <- bind_rows(
 
 combinado <- combinado %>% 
   mutate(periodo_eleitoral = case_when(
-    (combinado$date < as.Date('2018-10-29'))&(combinado$date > as.Date('2018-07-07')) ~ T,
-                                                                         T ~ F))
+    (combinado$date < as.Date('2018-10-29'))&(combinado$date > as.Date('2018-07-07')) ~ "Sim",
+                                                                         T ~ "Não"))
 
 write.csv(combinado, 'tweets_presidenciaveis.csv', row.names = F)
