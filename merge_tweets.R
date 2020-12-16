@@ -34,4 +34,10 @@ combinado <- combinado %>%
     (combinado$date < as.Date('2018-10-29'))&(combinado$date > as.Date('2018-07-07')) ~ "Sim",
                                                                          T ~ "Não"))
 
+ggplot(data = combinado, aes(x = date)) +
+  geom_histogram(aes(fill = ..count..)) +
+  theme(legend.position = "none") +
+  xlab("Tempo") + ylab("Número de tweets") + 
+  scale_fill_gradient(low = "darkblue", high = "darkorange")
+
 write.csv(combinado, 'tweets_presidenciaveis.csv', row.names = F)
