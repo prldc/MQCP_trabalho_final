@@ -1,0 +1,29 @@
+---
+title: "Slides"
+author: |
+  | Erlene Avelino 
+  | Louise Almeida da Silva
+  | Pedro Luz de Castro
+  | Renan Almeida
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objeto
+
+Dada as grandes possibilidades de audiência, interação e mobilização das redes sociais, como o twitter, candidatos tem sido cada vez mais atraídos a utilização dessas ferramentas. É possível, por sua vez, observar indícios de suas estratégias políticas em relação aos usuários como eleitores, através do registro das suas postagens. Nesse sentido, propomos aqui observar o comportamento dos principais candidatos à presidência das eleições de 2018, através do efeito do período eleitoral sob a quantidade de postagens e dos principais tópicos abordados. 
+
+## Questões de pesquisa
+
+I) como o período eleitoral impactou o comportamento online dos candidatos à presidência?
+
+II) Há mudanças significativas na frequência de uso e no que é abordado pelos candidatos em relação a datas mais distantes do pleito?  
+
+## Justificativa
+
+A nossa proposta se insere num corpo de investigações mais amplo, que procura discutir a relação entre o comportamento dos candidatos e os resultados eleitorais (BRAGA e CARLOMAGNO, 2018). Sabemos que a importância das mídias e redes sociais é hoje um dado, mas o seu significado, as mudanças que provoca, e a maneira como ela é de fato incorporada pelos processos políticos precisam ainda ser amplamente discutidas e investigadas. Entendemos, que a partir de estudos empíricos, que levem em conta o uso que os próprios candidatos fazem destas ferramentas, poderemos ter melhores indícios das tendências e conformação desse fenômeno. 
+
+
