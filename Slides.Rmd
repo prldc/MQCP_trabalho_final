@@ -26,4 +26,10 @@ II) Há mudanças significativas na frequência de uso e no que é abordado pelo
 
 A nossa proposta se insere num corpo de investigações mais amplo, que procura discutir a relação entre o comportamento dos candidatos e os resultados eleitorais (BRAGA e CARLOMAGNO, 2018). Sabemos que a importância das mídias e redes sociais é hoje um dado, mas o seu significado, as mudanças que provoca, e a maneira como ela é de fato incorporada pelos processos políticos precisam ainda ser amplamente discutidas e investigadas. Entendemos, que a partir de estudos empíricos, que levem em conta o uso que os próprios candidatos fazem destas ferramentas, poderemos ter melhores indícios das tendências e conformação desse fenômeno. 
 
+## Método
+
+- Os dados foram coletados por meio do pacote de Python getoldtweets;
+- Utilizamos a técnica Bag-of-words (saco de palavras), para extrair as informações do tuites;
+- realizamos um processo de tokenização, onde foi possível vetorizar o texto. Cada frase é agora um vetor e temos as informações do número de palavras e a frequência de cada uma nas frases.
+- Após realizar esse processo, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados.
 
