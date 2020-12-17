@@ -1,8 +1,10 @@
+# chamando os pacotes
 require(tidyverse)
 library(readr)
 
 `%notin%` <- Negate(`%in%`)
 
+# lendo as bases de dados
 Bolsonaro <- read_csv("jairbolsonaro.csv")
 Marina <- read_csv("MarinaSilva.csv")
 Alckmin <- read_csv("geraldoalckmin.csv")
@@ -11,7 +13,7 @@ Lula <- read_csv("LulaOficial.csv")
 Boulos <- read_csv("GuilhermeBoulos.csv")
 Ciro <- read_csv("cirogomes.csv")
 
-
+# unindo as bases em um único data frame
 combinado <- bind_rows(
   Bolsonaro %>%
     mutate(person = "Bolsonaro"),
@@ -27,7 +29,8 @@ combinado <- bind_rows(
     mutate(person = "Lula"),
   Ciro %>%
     mutate(person = "Ciro"),
-)
+) # criando a variável "person"
+
 
 combinado <- combinado %>% 
   mutate(periodo_eleitoral = case_when(
