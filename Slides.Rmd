@@ -29,7 +29,7 @@ A nossa proposta se insere num corpo de investigações mais amplo, que procura 
 ## Método
 
 - Os dados foram coletados por meio do pacote de Python getoldtweets;
-- coletamos todos os tuites dos candidatos: Fernando Haddad, Ciro Gomes, Geraldo Alckimim, Guilherme Boulos, Jair Bolsonaro, Luis Inácio Lula da Silva e Marina Silva, durante o periodo de 01/01/2018 à 31/12/2019;
+- coletamos todos os tuites dos candidatos: Fernando Haddad, Ciro Gomes, Geraldo Alckimim, Guilherme Boulos, Jair Bolsonaro, Luis Inácio Lula da Silva e Marina Silva, durante o periodo de 01/01/2018 à 01/01/2020;
 - Utilizamos a técnica Bag-of-words (saco de palavras), para extrair as informações do tuites;
 - realizamos um processo de tokenização, onde foi possível vetorizar o texto. Cada frase é agora um vetor e temos as informações do número de palavras e a frequência de cada uma nas frases.
 - Após realizar esse processo, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados.
