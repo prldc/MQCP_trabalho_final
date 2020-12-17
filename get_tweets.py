@@ -1,7 +1,6 @@
 import GetOldTweets3 as got
 import pandas as pd
 
-df = pd.read_excel('Haddad_Fernando_potential_influencers*.xlsx')
 usernames = ['cirogomes', 'geraldoalckmin', 'GuilhermeBoulos', 'Haddad_Fernando',
  'jairbolsonaro', 'LulaOficial', 'MarinaSilva']
 
