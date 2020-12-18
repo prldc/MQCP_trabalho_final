@@ -1,11 +1,16 @@
 ---
-title: "Slides"
+title: "Eleições e mídia digitais:"
+subtitle: "explorando uma possibilidade de análise"
 author: |
   | Erlene Avelino 
   | Louise Almeida da Silva
   | Pedro Luz de Castro
   | Renan Almeida
-output: beamer_presentation
+output: 
+  beamer_presentation:
+    theme: Pittsburgh
+    colortheme: beaver
+    fonttheme: structurebold
 ---
 
 ```{r setup, include=FALSE}
