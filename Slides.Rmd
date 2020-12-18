@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Questões de pesquisa
 
-1. Como o período eleitoral impactou o comportamento *online* dos candidatos à presidência?
+1. Como o período eleitoral impactou o comportamento dos candidatos à presidência no Twitter?
 
 2. Há mudanças significativas na frequência de uso e no que é abordado pelos candidatos em relação a datas mais distantes do pleito?  
 
@@ -41,11 +41,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Método
 
-- Os dados foram coletados por meio do pacote de Python getoldtweets;
+- Os dados foram coletados por meio do pacote de Python getoldtweets.
 
-- Foram coletados todos os tweets dos candidatos Fernando Haddad, Ciro Gomes, Geraldo Alckimim, Guilherme Boulos, Jair Bolsonaro, Luis Inácio Lula da Silva e Marina Silva, durante o periodo de 1 de janeiro de 2018 a 1 de janeiro de 2020;
+- Foram coletados todos os tweets dos candidatos Fernando Haddad, Ciro Gomes, Geraldo Alckimim, Guilherme Boulos, Jair Bolsonaro, Luis Inácio Lula da Silva e Marina Silva, durante o periodo de 1 de janeiro de 2018 a 1 de janeiro de 2020.
 
-- Para extrair as informações dos tweets, foi utilizada a técnica *Bag-of-words* (saco de palavras);
+- Para extrair as informações dos tweets, foi utilizada a técnica *Bag-of-words* (saco de palavras).
 
 - Realização de um processo de "tokenização", que permitiu vetorizar o texto. Assim, cada frase passou a ser um vetor, possibilitando verificar o número de palavras e a frequência de cada uma nas frases, tal como ilusta a figura no próximo slide. 
 
@@ -56,9 +56,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Método
 
-- Após realizar esse processo, fizemos uma limpeza dos dados, removendo palavras repetitivas (*stopwords*); 
+- Após realizar esse processo, fizemos uma limpeza dos dados, removendo "palavras vazias" (*stopwords*), palavras cuja frequência é tal que poluem a análise (como "um", “e”, “por”, “que”, “são” etc.). 
 
-- Em seguida, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados;
+- Em seguida, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados.
 
 - Aplicamos uma modelagem probabilística de tópicos, o modelo de tópico estrutural (STM), para definir os tópicos a partir da maior probabilidade de ocorrência de palavras e, em seguida, estimar o efeito da covariável “período eleitoral” em sua distribuição.
 
