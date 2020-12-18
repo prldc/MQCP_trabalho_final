@@ -36,5 +36,13 @@ A nossa proposta se insere num corpo de investigações mais amplo, que procura 
 - Em seguida, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados;
 - Aplicamos uma modelagem probabilística de tópicos, o modelo de tópico estrutural (STM), para definir os tópicos a partir da maior probabilidade de ocorrência de palavras e, em seguida, estimar o efeito da covariável “período eleitoral” em sua distribuição.
 
+## Conclusões
+
+- Uma vantagem da abordagem do modelo de tópico estrutural (STM) que utilizamos, é que podemos ter um resumo dos dados textuais, algo que seria impossível de se obter manualmente. Por sua vez, essa também é uma ferramenta muito útil para fazer classificações, quando não conhecemos as categorias; 
+- Contudo, ressaltamos que análises mais aprofundadas devem buscar métodos mais robustos de validação das categorias. Uma alternativa muito interessante foi desenvolvida por Quinn (2010), que propõe associar a distribuição dos tópicos ao longo do tempo com eventos externos;
+- Algo muito evidente nos dados que analisamos é que a frequência de postagens dos presidenciáveis aumenta substantivamente durante o período eleitoral. Pudemos observar também exemplos de mudança interessantes nos tópicos abordados pelos candidatos Fernando Haddad e Jair Bolsonaro;
+- Na literatura, esse é um recorte empírico interessante, tanto do ponto de vista de analisar possíveis mudanças de comportamento e estratégias dos candidatos em função do período, quanto em vista de observar tendências de incorporação no uso das ferramentas por parte da classe política;
+- Salientamos, por fim, que a partir da abordagem que adotamos, não seria possível maiores aprofundamentos na avaliação do uso estratégico das ferramentas por parte dos candidatos. Esse tipo de análise requer uma maior exploração conceitual e empírica dos assuntos mobilizados nas postagens. Por sua vez, avanços substantivos também tem sido alcançados a partir da uma exploração mais acurada das possibilidades oferecidas pelas próprias mídias digitais, como em  Aggio (2019).
+
 
 
