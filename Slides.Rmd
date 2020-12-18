@@ -1,16 +1,13 @@
 ---
-title: "Eleições e mídia digitais:"
-subtitle: "explorando uma possibilidade de análise"
+title: "Eleições e mídia digitais: explorando uma possibilidade de análise"
 author: |
   | Erlene Avelino 
   | Louise Almeida da Silva
   | Pedro Luz de Castro
   | Renan Almeida
-output: 
-  beamer_presentation:
-    theme: Pittsburgh
-    colortheme: beaver
-    fonttheme: structurebold
+output:
+  slidy_presentation:
+    highlight: tango
 bibliography: bibliografia.bib
 csl: abnt.csl
 ---
@@ -72,7 +69,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Tweets de todos os candidatos ao longo do tempo
 
-![](imagens/n_de_tweets.png)
+<div align="center">
+<img src="imagens/n_de_tweets.png" width=1280 height=720>
+</div>
 
 ## Resultados
 
@@ -82,7 +81,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Resultados
 
-![](imagens/efeito-periodo-eleitoral-haddad.png)
+<div align="center">
+<img src="imagens/efeito-periodo-eleitoral-haddad.png" width=1280 height=720>
+</div>
 
 ## Resultados
 
@@ -92,7 +93,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Resultados
 
-![](imagens/efeito-periodo-eleitoral-bolsonaro.png)
+<div align="center">
+<img src="imagens/efeito-periodo-eleitoral-bolsonaro.png" width=1280 height=720>
+</div>
 
 ## Conclusões
 
@@ -111,7 +114,4 @@ knitr::opts_chunk$set(echo = FALSE)
 - Avanços substantivos também têm sido alcançados a partir de uma exploração mais acurada das possibilidades oferecidas pelas próprias mídias digitais, como em Aggio [-@Aggio2020].
 
 ## Referências bibliográficas
-
-
-
 
