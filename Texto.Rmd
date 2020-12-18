@@ -1,5 +1,5 @@
 ---
-title: "Título maneiro"
+title: "Eleições e mídia digitais: explorando uma possibilidade de análise"
 author: "Erlene Avelino, Louise Almeida da Silva, Pedro Luz de Castro, Renan Almeida"
 output: 
   html_document:
