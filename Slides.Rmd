@@ -34,7 +34,7 @@ A nossa proposta se insere num corpo de investigações mais amplo, que procura 
 - realizamos um processo de tokenização, onde foi possível vetorizar o texto. Cada frase é agora um vetor e temos as informações do número de palavras e a frequência de cada uma nas frases.
 - Após realizar esse processo, fizemos uma limpeza dos dados, removendo palavras repetitivas (“stopwords”); 
 - Em seguida, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados;
-- Aplicamos uma modelagem probabilística de tópicos: o modelo de tópico estrutural (STM), para definir os tópicos a partir da maior probabilidade de ocorrência de palavras e, em seguida, estimar o efeito da covariável “período eleitoral” em sua distribuição.
+- Aplicamos uma modelagem probabilística de tópicos, o modelo de tópico estrutural (STM), para definir os tópicos a partir da maior probabilidade de ocorrência de palavras e, em seguida, estimar o efeito da covariável “período eleitoral” em sua distribuição.
 
 
 
