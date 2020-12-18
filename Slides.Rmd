@@ -11,6 +11,8 @@ output:
     theme: Pittsburgh
     colortheme: beaver
     fonttheme: structurebold
+bibliography: bibliografia.bib
+csl: abnt.csl
 ---
 
 ```{r setup, include=FALSE}
@@ -19,35 +21,97 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Objeto
 
-Dada as grandes possibilidades de audiência, interação e mobilização das redes sociais, como o twitter, candidatos tem sido cada vez mais atraídos a utilização dessas ferramentas. É possível, por sua vez, observar indícios de suas estratégias políticas em relação aos usuários como eleitores, através do registro das suas postagens. Nesse sentido, propomos aqui observar o comportamento dos principais candidatos à presidência das eleições de 2018, através do efeito do período eleitoral sob a quantidade de postagens e dos principais tópicos abordados. 
+- Dada as grandes possibilidades de audiência, interação e mobilização das redes sociais virtuais, como o Twitter, candidatos a cargos políticos têm sido cada vez mais atraídos à utilização dessas ferramentas. É possível observar indícios de suas estratégias por meio da observação dos registros de suas postagens. 
+
+- Proposta: observar o comportamento dos principais candidatos à presidência das eleições de 2018, ponderando o efeito do período eleitoral sobre a quantidade de postagens e sobre os principais tópicos abordados. 
 
 ## Questões de pesquisa
 
-I) como o período eleitoral impactou o comportamento online dos candidatos à presidência?
+1. Como o período eleitoral impactou o comportamento *online* dos candidatos à presidência?
 
-II) Há mudanças significativas na frequência de uso e no que é abordado pelos candidatos em relação a datas mais distantes do pleito?  
+2. Há mudanças significativas na frequência de uso e no que é abordado pelos candidatos em relação a datas mais distantes do pleito?  
 
 ## Justificativa
 
-A nossa proposta se insere num corpo de investigações mais amplo, que procura discutir a relação entre o comportamento dos candidatos e os resultados eleitorais (BRAGA e CARLOMAGNO, 2018). Sabemos que a importância das mídias e redes sociais é hoje um dado, mas o seu significado, as mudanças que provoca, e a maneira como ela é de fato incorporada pelos processos políticos precisam ainda ser amplamente discutidas e investigadas. Entendemos, que a partir de estudos empíricos, que levem em conta o uso que os próprios candidatos fazem destas ferramentas, poderemos ter melhores indícios das tendências e conformação desse fenômeno. 
+- A nossa proposta se insere num corpo de investigações mais amplo, que procura discutir a relação entre o comportamento dos candidatos e os resultados eleitorais [@BragaCarlomagno2018]. 
+
+- A importância das mídias digitais é hoje um dado, mas o seu significado, as mudanças que provocam, e a maneira como são de fato incorporadas pelos processos políticos precisam ainda ser amplamente discutidas e investigadas. 
+
+- Melhores indícios das tendências e conformações desse fenômeno dependem de estudos empíricos que levem em conta o uso que os próprios candidatos fazem dessas ferramentas.
 
 ## Método
 
 - Os dados foram coletados por meio do pacote de Python getoldtweets;
-- coletamos todos os tuites dos candidatos: Fernando Haddad, Ciro Gomes, Geraldo Alckimim, Guilherme Boulos, Jair Bolsonaro, Luis Inácio Lula da Silva e Marina Silva, durante o periodo de 01/01/2018 à 01/01/2020;
-- Utilizamos a técnica Bag-of-words (saco de palavras), para extrair as informações do tuites;
-- realizamos um processo de tokenização, onde foi possível vetorizar o texto. Cada frase é agora um vetor e temos as informações do número de palavras e a frequência de cada uma nas frases.
-- Após realizar esse processo, fizemos uma limpeza dos dados, removendo palavras repetitivas (“stopwords”); 
+
+- Foram coletados todos os tweets dos candidatos Fernando Haddad, Ciro Gomes, Geraldo Alckimim, Guilherme Boulos, Jair Bolsonaro, Luis Inácio Lula da Silva e Marina Silva, durante o periodo de 1 de janeiro de 2018 a 1 de janeiro de 2020;
+
+- Para extrair as informações dos tweets, foi utilizada a técnica *Bag-of-words* (saco de palavras);
+
+- Realização de um processo de "tokenização", que permitiu vetorizar o texto. Assim, cada frase passou a ser um vetor, possibilitando verificar o número de palavras e a frequência de cada uma nas frases, tal como ilusta a figura no próximo slide. 
+
+
+## Exemplo de "tokenização"
+
+![](imagens/exemplo.png)
+
+## Método
+
+- Após realizar esse processo, fizemos uma limpeza dos dados, removendo palavras repetitivas (*stopwords*); 
+
 - Em seguida, calculamos uma matriz de frequência de documentos – DFM, combinando os vetores em uma única matriz dados;
+
 - Aplicamos uma modelagem probabilística de tópicos, o modelo de tópico estrutural (STM), para definir os tópicos a partir da maior probabilidade de ocorrência de palavras e, em seguida, estimar o efeito da covariável “período eleitoral” em sua distribuição.
+
+## Resultados
+
+- Os principais resultados dessa modelagem são expostos nos próximos slides.
+
+- O gráfico a seguir mostra as frequências de tweets de todos os candidatos analisados ao longo do período de tempo definido.
+
+- Com base no gráfico, é possível observar que o período eleitoral, representado pelas barras em cor alaranjada, foi o período de maior atividade dos candidatos no Twitter.
+
+## Tweets de todos os candidatos ao longo do tempo
+
+![](imagens/n_de_tweets.png)
+
+## Resultados
+
+- A figura a seguir busca estimar o efeito do período eleitoral nos tópicos abordados por Fernando Haddad no Twitter.
+
+- Podemos observar que o tópico do ex-presidente Lula foi particularmente saliente durante o período eleitoral, enquanto tweets sobre política educacional ocorreram mais frequentemente fora deste.
+
+## Resultados
+
+![](imagens/efeito-periodo-eleitoral-haddad.png)
+
+## Resultados
+
+- A seguir, o mesmo é feito em relação ao então candidato Jair Bolsonaro.
+
+- É possível constatar que o presidente Jair Bolsonaro fez mais comentários sobre seus adversários políticos na esquerda durante o período eleitoral. Comentários críticos à imprensa, por outro lado, ocorreram de forma homogênea dentro e fora do período eleitoral.
+
+## Resultados
+
+![](imagens/efeito-periodo-eleitoral-bolsonaro.png)
 
 ## Conclusões
 
-- Uma vantagem da abordagem do modelo de tópico estrutural (STM) que utilizamos, é que podemos ter um resumo dos dados textuais, algo que seria impossível de se obter manualmente. Por sua vez, essa também é uma ferramenta muito útil para fazer classificações, quando não conhecemos as categorias; 
-- Contudo, ressaltamos que análises mais aprofundadas devem buscar métodos mais robustos de validação das categorias. Uma alternativa muito interessante foi desenvolvida por Quinn (2010), que propõe associar a distribuição dos tópicos ao longo do tempo com eventos externos;
-- Algo muito evidente nos dados que analisamos é que a frequência de postagens dos presidenciáveis aumenta substantivamente durante o período eleitoral. Pudemos observar também exemplos de mudança interessantes nos tópicos abordados pelos candidatos Fernando Haddad e Jair Bolsonaro;
-- Na literatura, esse é um recorte empírico interessante, tanto do ponto de vista de analisar possíveis mudanças de comportamento e estratégias dos candidatos em função do período, quanto em vista de observar tendências de incorporação no uso das ferramentas por parte da classe política;
-- Salientamos, por fim, que a partir da abordagem que adotamos, não seria possível maiores aprofundamentos na avaliação do uso estratégico das ferramentas por parte dos candidatos. Esse tipo de análise requer uma maior exploração conceitual e empírica dos assuntos mobilizados nas postagens. Por sua vez, avanços substantivos também tem sido alcançados a partir da uma exploração mais acurada das possibilidades oferecidas pelas próprias mídias digitais, como em  Aggio (2019).
+- O modelo STM possibilita ter um resumo dos dados textuais, algo que seria impossível de se obter manualmente. Também é uma ferramenta útil para fazer classificações, quando as categorias não são conhecidas.
+
+- Contudo, análises mais aprofundadas devem buscar métodos mais robustos de validação das categorias. Uma alternativa interessante foi desenvolvida por Quinn [-@quinn], que propõe associar a distribuição dos tópicos ao longo do tempo com eventos externos.
+
+- A frequência de postagens dos presidenciáveis aumenta substantivamente durante o período eleitoral. Também é possível observar exemplos de mudanças consideráveis nos tópicos abordados pelos candidatos Fernando Haddad e Jair Bolsonaro dentro e fora do período eleitoral.
+
+## Conclusões
+
+- Na literatura, esse é um recorte empírico atrativo, tanto do ponto de vista da análise de possíveis mudanças de comportamento e estratégias dos candidatos em função do contexto, quanto em vista de observar tendências de incorporação no uso das ferramentas por parte da classe política.
+
+- Uma análise sobre avaliação do uso estratégico das ferramentas por parte dos candidatos requer uma maior exploração conceitual e empírica dos assuntos mobilizados nas postagens do que a que foi realizada aqui.
+
+- Avanços substantivos também têm sido alcançados a partir de uma exploração mais acurada das possibilidades oferecidas pelas próprias mídias digitais, como em Aggio [-@Aggio2020].
+
+## Referências bibliográficas
+
 
 
 
