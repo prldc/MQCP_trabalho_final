@@ -130,18 +130,18 @@ combinado <- bind_rows(
 ) # criando a variável "person"
 ```
 
-Formada a base de dados, podemos visualizar facilmente como os tweets se distribuíram ao longo do tempo. É possível observar na figura abaixo que o período eleitoral, em laranja, foi o período de maior atividade nos candidatos no Twitter:
+Formada a base de dados, podemos visualizar facilmente como os tweets se distribuíram ao longo do tempo. É possível observar na figura abaixo que o período eleitoral, em laranja, foi o período de maior atividade nos candidatos no Twitter^[Como a modelagem é computacionalmente intensiva, podendo demorar vários minutos, optamos por carregar as imagens diretamente.]:
 
-**Imagem Aqui**
+![Tweets ao longo do tempo](https://uc1905d2302a19321ac925f574e5.previews.dropboxusercontent.com/p/thumb/ABB8NVC3XwX3YnOzKMsHgL_P9uFXaPYfbIQX59UDG6oGpCLgDgeQOWgK3TYienG4xuMua6vBTYeGXoVx4Itb8B1pTKbrIVouWBbpgZCFK7sRTM9ieVd1MUVHEwQz7coRT7MFUym_mbWOAhTmhxkZXiYEe1nLfhYF4ZXlP4v-tPPJRYyUmFY1kNWvFi_Z8vTtXTe1U9EIy-h9jJAii649tbu23aRFlYjcHHb-cYRwpYWoXwRbM73PtI4vkmb3hFSeUI6N0iPbb2Lu3RsFBiYKPmTWvF1MQ9jmnRZZAO_X1dKzTbupnyLv47j4Qyh1ADmOh5A8aVsT33oo9XHv2Aub9qaKb39QN8Es001IY_coFL0nXleIcfFYRtm3CI4DX1xFVatr23NuPaMQW_LY9JvwQkRm/p.png?fv_content=true&size_mode=5)
 
 ### 3.2.	Vetorização 
 
-Após a coleta dos dados brutos, deixamos o conjunto de dados em um formato para que pudesse ser processado no R. Dessa forma, vetorizamos o corpus por meio de um processo chamado de tokenização, que consiste em converter as sentenças de texto em vetores numéricos. Para isso, utilizamos a técnica de saco de palavras (“bag of words”), uma representação simplificada dos dados textuais, que faz um processo de contagem, mas qualquer informação sobre a gramática ou a posição das palavras é descartada. O saco de palavras é transformado em um conjunto de termos e suas respectivas frequências^[https://minerandodados.com.br/como-preparar-dados-de-texto-para-machine-learning/ Acesso em 16/12/2020.] . Dessa forma, a frase “isso é um exemplo” seria um vetor linha com quatro colunas, com o valor 1 para cada palavra. Confira-se a seguinte figura:
+Após a coleta dos dados brutos, deixamos o conjunto de dados em um formato para que pudesse ser processado no R. Dessa forma, vetorizamos o corpus por meio de um processo chamado de tokenização, que consiste em converter as sentenças de texto em vetores numéricos. Para isso, utilizamos a técnica de saco de palavras (*bag of words*), uma representação simplificada dos dados textuais, que faz um processo de contagem, mas qualquer informação sobre a gramática ou a posição das palavras é descartada. O saco de palavras é transformado em um conjunto de termos e suas respectivas frequências^[https://minerandodados.com.br/como-preparar-dados-de-texto-para-machine-learning/ Acesso em 16/12/2020.] . Dessa forma, a frase “isso é um exemplo” seria um vetor linha com quatro colunas, com o valor 1 para cada palavra. Confira-se a seguinte figura:
 
-**Outra Imagem Aqui**
+![](https://ucf00b35185a36e4a94a8f2c36dd.previews.dropboxusercontent.com/p/thumb/ABAqr7nXqqM3PxeddXA6_zk3zflogjOad9kB1lICy0Ql_iDUiv6I6Ko2HimK0a6ZKLdgEhSKg07It5tUIOHUjYCgzXSU6TofH3lz71jWmLXiDTcFWyAkuNIvV_dHp71PGRUsmeXXNMaRrNA4dNlt3PNqia6ZLvYDjKkLfg1zWjcuAcIbwEAt3GGYn-i2hXtupACjjtLb180HrlYFM8oWuNRAMjVcugP6Osb3K4gIGwothK9cVk-rt2_GOs-4o7UzzYy2_7V1NcHypm3scnkWCOYEIgQBamD7PcUhZr4DMFtWBANQ_0ZydkPiAX8UZ9eeHouWtii9fsYM-5eab0GkLuiR51rqG-OIzKhdJENNGo24dL0eXn4laanTt7F-MR0g190/p.png?fv_content=true&size_mode=5)
 
 ### 3.3.	Tratamento dos dados 
-Após a vetorização dos dados coletados do twitter, foi realizada uma limpeza deles, removendo os dados desnecessários do corpus, como palavras impedidas (stopwords) (SILGE; ROBINSON, 2017). Essas palavras são aquelas muito frequentes no texto, mas que geram poluição na base de dados. Essas palavras são removidas para manter as distintivas, que ajudarão na composição dos tópicos do nosso exercício.
+Após a vetorização dos dados coletados do twitter, foi realizada uma limpeza deles, removendo os dados desnecessários do corpus, como palavras impedidas (*stopwords*) [@silge2017]. Essas palavras são aquelas muito frequentes no texto, mas que geram poluição na base de dados. Essas palavras são removidas para manter as distintivas, que ajudarão na composição dos tópicos do nosso exercício.
 
 ### 3.4	Cálculo da matriz de frequência dos documentos 
 Após o pré-processamento dos dados, uma matriz de associação é criada para a identificação de frequência dos termos e associação entre eles. O conjunto de textos é transformado em uma matriz de termos, contendo as palavras em cada linha e os documentos (cada tweet) em cada coluna. O conteúdo da célula é a frequência do termo em cada documento. O interessante nisso é descobrir quais palavras têm alta probabilidade de aparecerem juntas, ou seja, quais palavras têm maior probabilidade de aparecer em cada tópico. No pacote stm, a vetorização, a remoção de stop words e o cáluclo da matriz de frequência dos documentos ocorrem no mesmo passo, por meio da função processed. Neste exercício, utilizaremos os tweet do candidato Fernando Haddad:
@@ -156,7 +156,7 @@ processed <- textProcessor(tweets$documents, stem= F, lowercase = F,
 ```
 
 ### 3.5. Aplicação da modelagem STM (Structural Topic Model) 
-A última fase da análise de texto empreendida foi a utilização de uma modelagem probabilística de tópicos: o modelo de tópico estrutural (STM). A modelagem de tópicos trata cada documento como uma mistura de tópicos e cada tópico como uma mistura de palavras. Um tópico é definido como uma distribuição de probabilidade sobre um vocabulário fixo. Como exemplo, um tópico sobre “economia” será aquele que contém palavras relacionadas à “economia” com maior probabilidade de ocorrência. Por outro lado, um tópico que se relacione com qualquer outro assunto distinto conterá palavras sobre economia com probabilidade de ocorrência muito baixa ou zero. Todos os tópicos contêm distribuições com probabilidades sobre todo o vocabulário fixo, mas essas probabilidades só assumirão valores mais altos nos termos que caracterizam o tópico (SCHNEIDER, 2014). 
+A última fase da análise de texto empreendida foi a utilização de uma modelagem probabilística de tópicos: o modelo de tópico estrutural (STM). A modelagem de tópicos trata cada documento como uma mistura de tópicos e cada tópico como uma mistura de palavras. Um tópico é definido como uma distribuição de probabilidade sobre um vocabulário fixo. Como exemplo, um tópico sobre “economia” será aquele que contém palavras relacionadas à “economia” com maior probabilidade de ocorrência. Por outro lado, um tópico que se relacione com qualquer outro assunto distinto conterá palavras sobre economia com probabilidade de ocorrência muito baixa ou zero. Todos os tópicos contêm distribuições com probabilidades sobre todo o vocabulário fixo, mas essas probabilidades só assumirão valores mais altos nos termos que caracterizam o tópico [@schneider2014]. 
 
 O STM consiste em um modelo gerador de contagens de palavras, semelhante ao modelo de tópico de alocação latente de Dirichlet (LDA), que permite aos pesquisadores descobrir tópicos e estimar sua relação com os metadados do documento [@stm]. Esse modelo é adequado para nossos propósitos porque nos permite não apenas descobrir os tópicos latentes no corpus, mas também estimar o efeito da covariável “período eleitoral” em sua distribuição, como fizemos para testar como o período eleitoral afetou esses tópicos durante as eleições de 2018. O pacote stm exige que o vocabulário, os metadados e os documentos sejam armazenados em três variáveis distintas:
 
@@ -175,9 +175,10 @@ findingk <- searchK(out$documents, out$vocab, K = c(16, 25, 36, 49, 64),
 plot(findingk)
 ```
 
-**Mais uma imagem**
+![](https://uc7bfb135b9421fbaa7440d4b172.previews.dropboxusercontent.com/p/thumb/ABD-IGNXL9E3cg_J8M2LR680sdbYHNZbbjDhuga6TFE6WsZPGPakYULZaUPImq-ZjltZaU-WIRmOC2SP42ggS08zvMIOSRShWQdxfkKYQLrMSA-lNClhxJ71pXfpOG8SLzR0RiDSaQQcF1waZE9N86HYNay-_nyb6eWqzwhEScnS2wiWZQ15rUc4sgbGok7OFwffOOSdOKJH2v5DDRN-BQw0Fyt6C6PJ3SYykO60JHg1wlKLe37shIt8V9pJQ_fdQ1knHGRjjnzQQzyHj0WoZMwVYC4nhWr7UnLd3Io6j4cigDK6VEW64X2HWu-q6ZxfMXzS_fPmes3vnn9XxqVA5rBD008xLUX2rQc4IocpyPkxYCNrwAXEugA0Fud61yN05nE/p.png?fv_content=true&size_mode=5)
 
-Cumpre frisar que é preciso cautela no uso e interpretação dos resultados obtidos com a modelagem de tópicos. Os tópicos e sua distribuição ao longo dos documentos obtidos não são “definitivos”. O ajuste de um modelo de tópicos a uma coleção sempre irá produzir padrões a partir do corpus, ainda que os mesmos não estejam “naturalmente” presentes na coleção (SCHNEIDER, 2014). 
+Cumpre frisar que é preciso cautela no uso e interpretação dos resultados obtidos com a modelagem de tópicos. Os tópicos e sua distribuição ao longo dos documentos obtidos não são “definitivos”. O ajuste de um modelo de tópicos a uma coleção sempre irá produzir padrões a partir do corpus, ainda que os mesmos não estejam “naturalmente” presentes na coleção [@schneider2014].
+
 Baseado nesses resultados, optamos por realizar a modelagem com k=25 tópicos, o valor com maior coerência semântica.
 
 ```{r}
@@ -190,7 +191,7 @@ plot(F_STM)
 
 ```
 
-**Mais outra imagem**
+![](https://uc3838e8c82e8e13ed9f0827723d.previews.dropboxusercontent.com/p/thumb/ABBmSdC74lmP1BG9ZyCGO4qQExtph7PRuJVetk7ZvRXgEgWFyBMPRjn1vdcNB6R6rxzk0azfIefZSklcioQ051CaKcHAbzqbs2VDQ4JNWuLXuTMYUGG4rVo5E-mzctZoEE1hBjTEuCY-OOccN41_FvLWVTmUjY5WXtyJSl6cqv4UMJ31MuD6lGpoiGxG1gU63UR_Q6FfHgcF5ad-KfDeYQvwPBjzDqIqioAofgjHcOfbeSAfhmFxmTC0w1s24aXcbkoyMdijA4XTNi7-KgamBJf1OxQEOcI-HXvFxbam_W3DIkXT2sujGWjdo3VqYOhKEyDdie2QFcGbIZIsH9DQ-T0joitIlK4C9gWWHJbxyZi5zaBeuZnCuWgbj3nQaJq-AqQ/p.png?fv_content=true&size_mode=5)
 
 Examinando o resultado de nossa modelagem, podemos observar vários tópicos de interesse político. Em especial, os tópicos 4, 7 e 9 parecem se referir à educação, segurança e ao ex-presidente Lula, respectivamente. Usando o argumento type="labels" na função plot, podemos examinar esses tópicos em maior detalhe:
 
@@ -198,7 +199,7 @@ Examinando o resultado de nossa modelagem, podemos observar vários tópicos de 
 plot(F_STM, type="labels", topics=c(4, 7,9))
 ```
 
-**Mais imagem**
+![](https://ucc698eed419c97ff3fbe6216034.previews.dropboxusercontent.com/p/thumb/ABCy5IiQ7IQcC8El-pGCBvKQ5_ROLJh_836dg5I9chql7MzoMIOWB1-88-nTL0s68BvEV_CLauhubyILDrG20_ARTfFgkzVVc0mgdK3bSO6jD6WTuvPeVW2pwOjnRJ4BNIu7nsOA-8qoRVyHhvp38RZlnz3oeVh4Wa2_VFtiVfI4PrXEUMmlR0XvqIbUcsBK05HqrFQJ2H8qMyLSOKOSJ9vQVGaiLLRdY9_3GrPVs8NYWoKYI5CfVrdPviErf10S_0NcsuIQMOQXRHsrV29krSMbhns9Szc5RUAIbHL3M9kRWDU7Yra6Obwon8IFVeYhMSdYO2nDsHJFfy-FL_MCoZu-QoYc1xEi-F7V8ZLNcXcMOhTKCrH9iVvkssFd3qdmRNQ/p.png?fv_content=true&size_mode=5)
 
 Um exame das 20 palavras mais frequentes em cada tópico confirma nossa observação de que eles se estruturam em torno de eixos temáticos distintos. Podemos agora calcular como o período eleitoral impactou a frequências desses tópicos:
 
@@ -216,7 +217,7 @@ plot(predict_topics, covariate = "periodo_eleitoral", topics = c(4, 7, 9),
 
 ```
 
-**Imagem**
+![](https://uc199fc5a9748c0b69cd8903d3e6.previews.dropboxusercontent.com/p/thumb/ABBdNFQmhuJsYWJ364HO8E8MML4ddRzYEEIHVRQ3USfaXT5-cF2nLwU01-aLE4iFpYRPxhfZQA416SmikY-bGArGzsmLeHgS_4Gf8lXHv9p3QeRExq8-kK94N8tSUtHM_JgvSX7yt-AC6Lvo6xKfTs6MDUAET8mJ5S6cIQB5FHPUempbMYv9x-P24thSYuxBmT3OP6FQuK0bmNnohIsVRpmw6t1dNx1kZbVN3f8ryi6_VVBUDBRQKxus-_o6lYD5ZPbB1Jb9A-pwhaXdxSPxWYzdn-cs_D7v2q0hAqxbGbATpqzWSGacYMsDepe-XQVE6kPlO4S-k891n_bT7vpnaeWde3NkA8pKcMoQPTBFZgkaOJrkBPQmHuFpdmBgckcB1m4/p.png?fv_content=true&size_mode=5)
 
 Podemos observar que o tópico do ex-presidente Lula foi particularmente saliente durante o período eleitoral, enquanto tweets sobre política educacional ocorreram mais frequentemente fora do período eleitoral.
 
@@ -248,7 +249,7 @@ plot(F_STM)
 
 ```
 
-**Advinha? Imagem**
+![](https://ucafef9b02015104fb0b50ca9c2c.previews.dropboxusercontent.com/p/thumb/ABAcCtkV0DphbMnzm0r0bOIoWDbKiYs99K6L2IVc13TsT8ByoT_2BDxEqvOEH6vsQBqqnH5tcFe1aMO7Lqqi2CwIitVO0Vz6RayX42RPx6QBp2ulEqUSbbxXzR6_y1oU3bcDRJd6-4v5vSbgEyKlWCktUhwrld6cDakhNroMkSfk6esotFm2gvF3ykDqcYedlmx6Oidh3gHGNA4yLDqxHh-6BWC4lyQjILdYHhqllNORolMkDSLGjO3-2Ei98gWmtR89zY1tnFTa8mirrtNr0AbTEDkWHpvcqMGpTQTS5Zosbtwnkknq9AAp_nlqTWs-cT0L7AszstGN982RoH4rgFwjDYGFQC73g8Kojv5E69-YfhTxtAh5QC_EvFXeYpXeXvY/p.png?fv_content=true&size_mode=5)
 
 Pinçamos os tópicos mais politicamente salientes para uma análise mais cuidadosa de seu conteúdo:
 
@@ -256,7 +257,7 @@ Pinçamos os tópicos mais politicamente salientes para uma análise mais cuidad
 plot(F_STM, type="labels", topics= c(1, 6, 8, 14, 15))
 ```
 
-**Imagem...**
+![](https://ucb6e8e2c88be2cd3c5e14a04353.previews.dropboxusercontent.com/p/thumb/ABDE1TryamQgEWiAX-eMs82tnPW0gx30IAI9jkcG0rU6SZ7l5-5iuaOR9hh5FgDBQ7Fkb9AkiSDfjGKRtih-RmLGWCODGqLjj0yIvYe_0JX7pF0A7RZVTpkqvF0rDFXah2nzv2o90QajlV5yghHOefM7kwrJpXnD6saITlXcbgdW2uN4rxrf_Y6-nMcVe2XSizgx6CUrJNg2sQejni1vUKjdvBOmbivN94YcDUTA_en9PDZafBnfuMRofNl1pfTDc1IH8ZWf3UemJScIbbtorFTMR8RbF3cBUgzZ-uRXW1rvd1F_vg-1b-kNesWern7J5HQgIF-UXUAvhw_OUbZxAwjLeH2w5CHZOrgSxR5ecaYDYc0COq40Okd715Jlf9JasvY/p.png?fv_content=true&size_mode=5)
 
 Podemos então classifica-los em temas e estimar o efeito do período eleitoral em sua distribuição:
 
@@ -274,7 +275,7 @@ plot(predict_topics, covariate = "periodo_eleitoral", topics = c(1, 6, 8, 14, 15
 
 ```
 
-**Última imagem**
+![](https://ucafef9b02015104fb0b50ca9c2c.previews.dropboxusercontent.com/p/thumb/ABAcCtkV0DphbMnzm0r0bOIoWDbKiYs99K6L2IVc13TsT8ByoT_2BDxEqvOEH6vsQBqqnH5tcFe1aMO7Lqqi2CwIitVO0Vz6RayX42RPx6QBp2ulEqUSbbxXzR6_y1oU3bcDRJd6-4v5vSbgEyKlWCktUhwrld6cDakhNroMkSfk6esotFm2gvF3ykDqcYedlmx6Oidh3gHGNA4yLDqxHh-6BWC4lyQjILdYHhqllNORolMkDSLGjO3-2Ei98gWmtR89zY1tnFTa8mirrtNr0AbTEDkWHpvcqMGpTQTS5Zosbtwnkknq9AAp_nlqTWs-cT0L7AszstGN982RoH4rgFwjDYGFQC73g8Kojv5E69-YfhTxtAh5QC_EvFXeYpXeXvY/p.png?fv_content=true&size_mode=5)
 
 Vemos então que o presidente Jair Bolsonaro fez mais comentários sobre seus adversários políticos na esquerda durante o período eleitoral. Comentário críticos à imprensa, por outro lado, ocorreram de forma homogênea dentro e fora do período eleitoral.  
 
