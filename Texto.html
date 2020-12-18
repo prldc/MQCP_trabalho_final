@@ -390,19 +390,19 @@ summary {
 
 <div id="TOC">
 <ul>
-<li><a href="#resumo">Resumo</a></li>
-<li><a href="#mídias-digitais-campo-político-e-ferramenta-de-pesquisa-cada-vez-mais-relevante">1. Mídias digitais: campo político e ferramenta de pesquisa cada vez mais relevante</a></li>
-<li><a href="#tutorial-pensar-num-título">2. Tutorial: (pensar num título)</a></li>
-<li><a href="#referências-bibliográficas">Referências bibliográficas</a></li>
+<li><a href="#resumo">1. Resumo</a></li>
+<li><a href="#mídias-digitais-e-política-um-campo-de-estudos-em-ascensão">2. Mídias digitais e política: um campo de estudos em ascensão</a></li>
+<li><a href="#como-realizar-pesquisas-utilizando-modelagem-de-tópicos">3. Como realizar pesquisas utilizando modelagem de tópicos</a></li>
+<li><a href="#referências-bibliográficas">4. Referências bibliográficas</a></li>
 </ul>
 </div>
 
 <div id="resumo" class="section level2">
-<h2>Resumo</h2>
+<h2>1. Resumo</h2>
 <p>O movimento de incorporação das redes sociais no processo eleitoral e suas constantes inovações no Brasil e no mundo, suscitam grandes expectativas, algumas delas relacionadas a compreensões normativas de democratização.Poderíamos citar, desde especulações sobre a redução de desigualdades de acesso a recursos competitivos entre candidatos, até pressuposições sobre a adoção de uma comunicação mais responsiva e deliberativa, entre elites políticas e eleitores. Neste texto, contudo, nos inspiramos na compreensão desenvolvida em trabalhos empíricos no campo da comunicação e política <span class="citation">(BRAGA; CARLOMAGNO, 2018)</span>, que asseveram que, mais do que suposições e uma discussão sobre os potenciais das ferramentas digitais, é necessário observar os usos que os atores verdadeiramente fazem delas. Nesse sentido, buscaremos aqui promover essa perspectiva, discutindo brevemente algumas pesquisas sobre o contexto brasileiro e apresentando um tutorial com uma alternativa de como realizar pesquisas com bases textuais de redes sociais, utilizando modelagem de tópicos (Topic Modeling). No exercício aplicado, procuramos estimar, por meio de dados do twitter, como o período eleitoral pode ter afetado os tópicos tratados pelos candidatos à presidência nas eleições de 2018.</p>
 </div>
-<div id="mídias-digitais-campo-político-e-ferramenta-de-pesquisa-cada-vez-mais-relevante" class="section level2">
-<h2>1. Mídias digitais: campo político e ferramenta de pesquisa cada vez mais relevante</h2>
+<div id="mídias-digitais-e-política-um-campo-de-estudos-em-ascensão" class="section level2">
+<h2>2. Mídias digitais e política: um campo de estudos em ascensão</h2>
 <p>Talvez não restem dúvidas, passadas as eleições de 2018, de que as mídias sociais são um componente e fator político muito importante, e devem especialmente ser levados em conta para a compreensão das eleições no Brasil e do período eleitoral em si. Considerando que este campo, do uso político das ferramentas digitais, é intrinsecamente dinâmico, procuraremos nesta seção exemplificar algumas questões relevantes e discutir sobre a forma como as próprias mídias digitais foram e podem ser utilizadas pelos pesquisadores para aborda-las. Não temos a pretensão aqui de discutir todo o percurso de incorporação das mídias nas campanhas políticas, ou fazer uma revisão bibliográfica sobre o campo<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. A ideia é apenas tentar despertar o interesse e incentivar a pesquisa empírica.</p>
 <p>Vamos começar falando do contexto. O que recorrentemente se ressalta sobre as mídias digitais e redes sociais é o seu caráter “desintermediado” <span class="citation">(AGGIO, 2020)</span>. Estamos, grosso modo, em uma nova era, distante dos antigos “filtros” dos meios de comunicação tradicionais e com possibilidades de interatividade imensas. A grande quantidade de usuários – eleitores – em conjunto, expostos continuamente a informações, vinculados por redes com disposições e ferramentas para interação, é obviamente um terreno fértil e igualmente estratégico para a política. Como resultado, as práticas tradicionais de campanha, baseadas nos meios antigos, foram solapados? O meio digital é agora o centro da disputa pelos votos? Utilizaremos os textos de Marques, Silva e Matos <span class="citation">(2011)</span> e Aggio e Reis <span class="citation">(2013)</span> para iniciar a discussão, e incorporaremos também as contribuições desenvolvidas por Braga e Carlomagno <span class="citation">(2018)</span>, Aggio <span class="citation">(2020)</span> e Murta, Magalhães e Pimentel <span class="citation">(2019)</span>.</p>
 <p>A primeira questão é mais diretamente abordada por Marques, Silva e Matos <span class="citation">(2011)</span>. Os autores procuram avaliar a estratégia de campanha de José Serra no twitter, explorando as mudanças na frequência e nos conteúdos das postagens durante o período eleitoral de 2010. Como resultado, consideram que ainda que Serra seja um usuário assíduo e tenha tido, possivelmente, mais razões para utilizar a ferramenta de maneira a se mostrar mais acessível, sua campanha e métodos de abordagens dos eleitores foram basicamente tradicionais. Ou seja, possuíam os mesmos princípios de divulgação e persuasão “de cima para baixo”, e não buscavam uma relação dialógica, especialmente sobre propostas políticas, com os seus seguidores. Aggio e Reis <span class="citation">(2013)</span> adotam uma estratégia de pesquisa semelhante, mas se aproximam mais da segunda questão que apontamos, sobre a centralidade do contexto das ferramentas digitais, nesse caso, o facebook, para as campanhas vencedoras de 3 candidatos a prefeito de capitais brasileiras no ano de 2012.</p>
@@ -417,8 +417,8 @@ summary {
 <p>Uma perspectiva interessante, adotada por Marques, Silva e Matos <span class="citation">(2011)</span> e Aggio e Reis <span class="citation">(2013)</span>, é a de observar a mudança no comportamento dos candidatos, nos assuntos abordados e frequência de uso das mídias, em função do período eleitoral. Como ressaltamos anteriormente, os autores estavam tentando compreender as campanhas online e as estratégias utilizadas pelos candidatos. Na próxima seção, apresentaremos um tutorial com uma ideia semelhante, explorando os tuites dos principais candidatos à presidência da eleição de 2018. Explicaremos como fazer um gráfico de frequência e como explorar o conteúdo de tuites através da técnica de modelagem de tópicos (Topic Modeling), para em seguida, observar o efeito do período eleitoral sobre a frequência de uso e os principais assuntos utilizados por cada candidato. Nesse sentido, à diferença dos autores tratados aqui, não examinaremos as publicações dos candidatos através de análise de conteúdo.</p>
 <p>É interessante observar que tanto Marques, Silva e Matos <span class="citation">(2011)</span> quanto Aggio e Reis <span class="citation">(2013)</span>, ressaltam o fato de que alguns candidatos de suas observações, haviam acabado de ingressar nas redes sociais ou tinham um perfil praticamente inativo antes do pleito. Talvez por isso, a diferença de frequência no uso das ferramentas tenha sido ainda mais importante para essas análises. Por sua vez, tanto os resultados de Serra <span class="citation">(MARQUES; SILVA; MATOS, 2011)</span>, quanto de Jair Bolsonaro <span class="citation">(AGGIO, 2020)</span> foram de campanhas que priorizaram estratégias “top down” e igualmente não discutiam sobre políticas substantivas. É possível supor que, passado o tempo, tenham havido maiores mudanças, e outras campanhas procurem discutir sobre propostas de políticas substantiva? Ou, é possível que campanhas procurem abordar não propostas, mas temas políticos, como uma ferramenta de mobilização adequada a essas redes? A nossa suposição, que não será desenvolvida aqui, é que talvez os comportamentos hoje, ou nas ultimas campanhas, não destoem tanto. Claro, em razão do maior peso das redes de maneira geral, ou de uma mudança provocada por ela, na distensão dos período de campanha.</p>
 </div>
-<div id="tutorial-pensar-num-título" class="section level2">
-<h2>2. Tutorial: (pensar num título)</h2>
+<div id="como-realizar-pesquisas-utilizando-modelagem-de-tópicos" class="section level2">
+<h2>3. Como realizar pesquisas utilizando modelagem de tópicos</h2>
 <p>Apresentaremos agora um tutorial de como fazer análise de texto e modelagem de tópicos (topic modeling), usando R e Python, e extrair informações valiosas dos principais assuntos tratados por atores políticos no Twitter. Consideramos que esse modelo de mineração de texto pode ser uma boa alternativa para a realização de pesquisas com dados textuais coletados de redes sociais. Com essa técnica, é possível lidar com toda a complexidade desse tipo de dado, organizando e simplificando as informações ao separá-las por tópicos.</p>
 <p>A Modelagem de Tópicos é utilizada para se ter uma ideia inicial do que os dados estão tratando, sem a necessidade de uma leitura prévia <span class="citation">(STAUDT JR, 2016)</span>. Consiste em um método para classificação não supervisionada, que encontra grupos naturais de palavras, mesmo quando não temos certeza do que estamos procurando <span class="citation">(SILGE; ROBINSON, 2017)</span>. É uma ferramenta útil para exploração de dados, nos quais os tópicos proveem um resumo dos dados textuais, algo que seria impossível de se obter manualmente <span class="citation">(SCHNEIDER, 2014)</span>.</p>
 <p>No nosso exercício, aplicamos esse modelo para observar o comportamento no twitter dos principais candidatos à presidência das eleições de 2018, especificamente o efeito do período eleitoral sob a quantidade de postagens e os principais tópicos abordados por eles. Com essa análise, objetivamos responder as seguintes questões:</p>
@@ -426,11 +426,11 @@ summary {
 <li><p>Como o período eleitoral impactou o comportamento dos candidatos à presidência no twitter?</p></li>
 <li><p>Há mudanças significativas na frequência de uso e no que é abordado pelos candidatos em relação a datas mais distantes do pleito?</p></li>
 </ol>
-<p>A proposta apresentada neste tutorial é meramente ilustrativa e exploratória. O principal intuito é o de incentivar e instrumentalizar futuras análises. Vamos observar quais os principais tópicos foram tratados pelos candidatos nas eleições presidenciais de 2018 - Ciro Gomes, Fernando Haddad, Geraldo Alckmin, Guilherme Boulos, Jair Bolsonaro, Luiz Inácio Lula da Silva e Marina Silva -, e, em seguida, analisar as mudanças destes tópicos e da frequência de postagens no twitter em função do período eleitoral. Para facilitar a compreensão do método aplicado, dividimos o processo de análise dos dados em 5 fases:</p>
+<p>A proposta apresentada neste tutorial é meramente ilustrativa e exploratória. O principal intuito é o de incentivar e instrumentalizar futuras análises. Vamos observar quais os principais tópicos foram tratados pelos candidatos nas eleições presidenciais de 2018 - Ciro Gomes, Fernando Haddad, Geraldo Alckmin, Guilherme Boulos, Jair Bolsonaro, Luiz Inácio Lula da Silva e Marina Silva -, e, em seguida, analisar as mudanças destes tópicos e da frequência de postagens no twitter em função do período eleitoral.</p>
+<p>Para facilitar a compreensão do método aplicado, dividimos o processo de análise dos dados em 5 fases, que estão expostas nas próximas subseções.</p>
 <div id="coleta-dos-dados" class="section level3">
-<h3>2.1. Coleta dos dados</h3>
+<h3>3.1. Coleta dos dados</h3>
 <p>Começaremos obtendo os dados brutos que possibilitarão a nossa análise. A tarefa é relativamente simples, visto que há diversos pacotes disponíveis para coleta de dados do Twitter, inclusive uma API da própria plataforma. Nesse exercício, faremos uso do pacote getoldtweets3, que permite pegar tweets antigos, para extrairmos dados de sete presidenciáveis das eleições de 2018: Ciro Gomes, Geraldo Alckmin, Fernando Haddad, Luís Inácio Lula da Silva, Jair Bolsonaro, Guilherme Boulos e Marina Silva.</p>
-<p><strong>Comentário Renan</strong>: Abri um chunk de código em R mesmo, pois só assim consegui configurar “eval=FALSE” (para só mostrar o código, sem rodá-lo)</p>
 <pre class="r"><code>import GetOldTweets3 as got
 import pandas as pd
 
@@ -452,7 +452,6 @@ def download_tweets(username):
 for username in usernames:
     download_tweets(username)</code></pre>
 <p>Selecionamos apenas conteúdo postado no intervalo entre 01/01/2018 e 01/01/2020, de modo a cobrirmos o período eleitoral e o ano subsequente, e armazenamos os resultados como uma planilha CSV. Obtidas as planilhas, formamos uma única base de dados, juntando-as com a linguagem de programação R. Fazendo uso das datas dos tweets, criamos então uma variável binária sinalizando se o tweet foi ou não compartilhado durante o período eleitoral, de 07/07/2018 a 29/10/2018.</p>
-<p>&lt;colar código de merge_tweets.R&gt;</p>
 <pre class="r"><code># chamando os pacotes
 require(tidyverse)
 library(readr)
@@ -489,16 +488,16 @@ combinado &lt;- bind_rows(
 <p><strong>Imagem Aqui</strong></p>
 </div>
 <div id="vetorização" class="section level3">
-<h3>2.2. Vetorização</h3>
+<h3>3.2. Vetorização</h3>
 <p>Após a coleta dos dados brutos, deixamos o conjunto de dados em um formato para que pudesse ser processado no R. Dessa forma, vetorizamos o corpus por meio de um processo chamado de tokenização, que consiste em converter as sentenças de texto em vetores numéricos. Para isso, utilizamos a técnica de saco de palavras (“bag of words”), uma representação simplificada dos dados textuais, que faz um processo de contagem, mas qualquer informação sobre a gramática ou a posição das palavras é descartada. O saco de palavras é transformado em um conjunto de termos e suas respectivas frequências<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> . Dessa forma, a frase “isso é um exemplo” seria um vetor linha com quatro colunas, com o valor 1 para cada palavra. Confira-se a seguinte figura:</p>
 <p><strong>Outra Imagem Aqui</strong></p>
 </div>
 <div id="tratamento-dos-dados" class="section level3">
-<h3>2.3. Tratamento dos dados</h3>
+<h3>3.3. Tratamento dos dados</h3>
 <p>Após a vetorização dos dados coletados do twitter, foi realizada uma limpeza deles, removendo os dados desnecessários do corpus, como palavras impedidas (stopwords) (SILGE; ROBINSON, 2017). Essas palavras são aquelas muito frequentes no texto, mas que geram poluição na base de dados. Essas palavras são removidas para manter as distintivas, que ajudarão na composição dos tópicos do nosso exercício.</p>
 </div>
 <div id="cálculo-da-matriz-de-frequência-dos-documentos" class="section level3">
-<h3>2.4 Cálculo da matriz de frequência dos documentos</h3>
+<h3>3.4 Cálculo da matriz de frequência dos documentos</h3>
 <p>Após o pré-processamento dos dados, uma matriz de associação é criada para a identificação de frequência dos termos e associação entre eles. O conjunto de textos é transformado em uma matriz de termos, contendo as palavras em cada linha e os documentos (cada tweet) em cada coluna. O conteúdo da célula é a frequência do termo em cada documento. O interessante nisso é descobrir quais palavras têm alta probabilidade de aparecerem juntas, ou seja, quais palavras têm maior probabilidade de aparecer em cada tópico. No pacote stm, a vetorização, a remoção de stop words e o cáluclo da matriz de frequência dos documentos ocorrem no mesmo passo, por meio da função processed. Neste exercício, utilizaremos os tweet do candidato Fernando Haddad:</p>
 <pre class="r"><code>tweets &lt;- readtext(&quot;tweets_presidenciaveis.csv&quot;)
 tweets &lt;- tweets %&gt;% filter(person == &quot;Haddad&quot;)
@@ -508,7 +507,7 @@ processed &lt;- textProcessor(tweets$documents, stem= F, lowercase = F,
                            customstopwords = stop, striphtml = T)</code></pre>
 </div>
 <div id="aplicação-da-modelagem-stm-structural-topic-model" class="section level3">
-<h3>2.5. Aplicação da modelagem STM (Structural Topic Model)</h3>
+<h3>3.5. Aplicação da modelagem STM (Structural Topic Model)</h3>
 <p>A última fase da análise de texto empreendida foi a utilização de uma modelagem probabilística de tópicos: o modelo de tópico estrutural (STM). A modelagem de tópicos trata cada documento como uma mistura de tópicos e cada tópico como uma mistura de palavras. Um tópico é definido como uma distribuição de probabilidade sobre um vocabulário fixo. Como exemplo, um tópico sobre “economia” será aquele que contém palavras relacionadas à “economia” com maior probabilidade de ocorrência. Por outro lado, um tópico que se relacione com qualquer outro assunto distinto conterá palavras sobre economia com probabilidade de ocorrência muito baixa ou zero. Todos os tópicos contêm distribuições com probabilidades sobre todo o vocabulário fixo, mas essas probabilidades só assumirão valores mais altos nos termos que caracterizam o tópico (SCHNEIDER, 2014).</p>
 <p>O STM consiste em um modelo gerador de contagens de palavras, semelhante ao modelo de tópico de alocação latente de Dirichlet (LDA), que permite aos pesquisadores descobrir tópicos e estimar sua relação com os metadados do documento <span class="citation">(ROBERTS; STEWART; TINGLEY, 2019)</span>. Esse modelo é adequado para nossos propósitos porque nos permite não apenas descobrir os tópicos latentes no corpus, mas também estimar o efeito da covariável “período eleitoral” em sua distribuição, como fizemos para testar como o período eleitoral afetou esses tópicos durante as eleições de 2018. O pacote stm exige que o vocabulário, os metadados e os documentos sejam armazenados em três variáveis distintas:</p>
 <pre class="r"><code>out &lt;- prepDocuments(processed$documents, processed$vocab, processed$meta)
@@ -582,7 +581,7 @@ plot(predict_topics, covariate = &quot;periodo_eleitoral&quot;, topics = c(1, 6,
 </div>
 </div>
 <div id="referências-bibliográficas" class="section level2 unnumbered">
-<h2>Referências bibliográficas</h2>
+<h2>4. Referências bibliográficas</h2>
 <div id="refs" class="references">
 <div id="ref-Aggio2020">
 <p>AGGIO, C. Comunicação eleitoral “desintermediada”, mas o quão realmente interativa? Jair Bolsonaro e o Twitter nas eleições de 2018. <strong>E-compós (Revista da Associação Nacional dos Programas de Pós-Graduação em Comunicação)</strong>, v. 23, p. 1–18, 2020. </p>
